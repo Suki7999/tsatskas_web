@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 const Banner = () => {
@@ -29,9 +30,11 @@ const Banner = () => {
     <div className="relative">
       {/* Banner Image */}
       <div className="relative">
-        <img
+        <Image
           src={images[currentIndex].src}
           alt="Banner"
+          height={400}
+          width={400}
           className="w-full h-[400px] object-cover"
         />
         {/* Overlay Text on Left Side */}

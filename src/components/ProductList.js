@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 // Бүтээгдэхүүний мэдээлэлт объект (Жишээ)
@@ -39,7 +40,7 @@ const ProductList = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
         {currentProducts.map((product) => (
           <div key={product.id} className="bg-gray-900 shadow-md rounded-lg overflow-hidden">
-            <img src={product.image} alt={product.name} className="w-full h-48 object-cover" />
+            <Image src={product.image} alt={product.name} className="w-full h-48 object-cover" height={300} width={300} />
             <div className="p-4">
               <h3 className="text-xl font-semibold text-gray-100">{product.name}</h3>
               <p className="text-lg text-green-500">${product.price.toFixed(2)}</p>

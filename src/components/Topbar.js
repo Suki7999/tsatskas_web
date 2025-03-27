@@ -66,14 +66,6 @@ const Topbar = () => {
             <li>
               <button
                 className="hover:text-gray-400"
-                onClick={() => handleNavigation('/product')}
-              >
-                Бүтээгдэхүүн
-              </button>
-            </li>
-            <li>
-              <button
-                className="hover:text-gray-400"
                 onClick={() => handleNavigation('/services')}
               >
                 Services
