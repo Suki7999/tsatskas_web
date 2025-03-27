@@ -2,7 +2,6 @@
 import Banner from "@/components/Banner";
 import PricePlans from "@/components/PricePlans";
 import Head from "next/head";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -13,6 +12,7 @@ export default function Home() {
           src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer.min.js"
           integrity="sha384-XXXXX" // Мөн integrity аттрибут нэмж ашиглаж болно
           crossOrigin="anonymous"
+          defer
         ></script>
       </Head>
 

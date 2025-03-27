@@ -11,6 +11,7 @@ export default function page() {
           src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer.min.js"
           integrity="sha384-XXXXX" // Мөн integrity аттрибут нэмж ашиглаж болно
           crossOrigin="anonymous"
+          defer
         ></script>
       </Head>
       <iframe

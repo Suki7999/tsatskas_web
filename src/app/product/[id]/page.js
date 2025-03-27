@@ -19,13 +19,13 @@ const ProductDetail = () => {
         {/* Бүтээгдэхүүний дэлгэрэнгүй мэдээлэл */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Бүтээгдэхүүний зураг */}
-          <div className="bg-gray-800 rounded-lg overflow-hidden">
+          {/* <div className="bg-gray-800 rounded-lg overflow-hidden">
             <img
               src={product.image}
               alt={product.name}
               className="w-full h-80 object-cover"
             />
-          </div>
+          </div> */}
 
           {/* Бүтээгдэхүүний мэдээлэл */}
           <div className="space-y-4">

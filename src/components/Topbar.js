@@ -20,7 +20,7 @@ const Topbar = () => {
       <div className="px-20 py-3 flex justify-between items-center">
         {/* Logo */}
         <div className="text-lg font-semibold cursor-pointer" onClick={() => handleNavigation('/')}>
-          Tsatsa's nail art salon
+          Tsatsa&apos;s nail art salon {/* Changed ' to &apos; */}
         </div>
 
         {/* Menu Button for Mobile */}
