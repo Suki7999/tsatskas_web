@@ -21,7 +21,8 @@ export default function page() {
           }
         }}
         src="https://d8dbbe518fe24012a9ec2f268559d80f.elf.site"
-        style={{ border: "none", width: "100%", minHeight: "1200px" }}
+        style={{ border: "none", width: "100%", height: "100%" }}
+        // className="border-0, w-full, h-auto"
       ></iframe>
     </div>
   );

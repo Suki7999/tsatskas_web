@@ -4,8 +4,8 @@ import { useState, useEffect, useCallback } from 'react';
 
 const Banner = () => {
   const images = [
-    { src: '/black-g-banner-1.png', text: 'Explore amazing products!' },
-    { src: '/black-g-banner-2.png', text: 'Discover our latest deals!' }
+    { src: '/black-g-banner-1.png', text: '' },
+    { src: '/black-g-banner-2.png', text: '' }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -41,20 +41,6 @@ const Banner = () => {
           {images[currentIndex].text}
         </div>
       </div>
-
-      {/* Navigation buttons */}
-      <button
-        onClick={prevSlide}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white text-black p-2 rounded-full"
-      >
-        Prev
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white text-black p-2 rounded-full"
-      >
-        Next
-      </button>
     </div>
   );
 };
