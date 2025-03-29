@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Dialog } from '@headlessui/react';
+import { useRouter } from 'next/navigation';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -51,9 +53,9 @@ const ProductList = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-green-400 via-blue-500 to-indigo-600 text-white p-6">
-      <h2 className="text-4xl font-extrabold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-red-500 to-pink-600">
-        Amazing Product List
+    <div className="min-h-screen bg-white text-white p-6">
+      <h2 className="text-4xl font-extrabold mb-8 text-center text-gray-900">
+        Бүтээгдэхүүний жагсаалт
       </h2>
 
       {/* Adjusted grid layout */}
@@ -61,23 +63,19 @@ const ProductList = () => {
         {products.map((product) => (
           <div
             key={product._id}
-            className="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-xl"
+            // onClick={() => openModal(product)}
+            onClick={() => router.push('/product/' + product._id)}
+            className="bg-white rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-xl cursor-zoom-in p-4"
           >
             <img
               className="w-full h-48 object-cover rounded-t-lg transition duration-300 transform hover:scale-110"
               src={product.image}
               alt={product.name}
             />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold text-gray-100">{product.name}</h3>
-              <p className="text-sm text-gray-300 mt-2">{product.description}</p>
-              <p className="text-lg text-green-400 mt-4">${product.price.toFixed(2)}</p>
-              <button
-                onClick={() => openModal(product)}
-                className="w-full mt-4 py-2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-md hover:from-teal-400 hover:to-cyan-400 focus:outline-none"
-              >
-                View Details
-              </button>
+            <div className="p-6">
+              <h3 className="text-lg font-semibold text-black">{product.name}</h3>
+              <p className="text-sm text-gray-500 mt-2">{product.description}</p>
+              <p className="text-lg text-gray-950 mt-4">{product.price.toFixed(0)}₮</p>
             </div>
           </div>
         ))}
@@ -86,7 +84,7 @@ const ProductList = () => {
       {/* Modal for displaying product details */}
       {selectedProduct && (
         <Dialog open={isOpen} onClose={closeModal}>
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+          <div className="fixed inset-0 flex justify-center items-center">
             <Dialog.Panel className="bg-gray-900 rounded-2xl p-8 max-w-lg w-full transform transition duration-300 scale-110">
               <Dialog.Title className="text-3xl font-extrabold text-white text-center">
                 {selectedProduct.name}
