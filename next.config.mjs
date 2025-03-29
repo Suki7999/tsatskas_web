@@ -3,8 +3,8 @@ const nextConfig = {
     async rewrites() {
       return [
         {
-          source: '/api/:path*', // All requests starting with /api will be proxied
-          destination: 'http://localhost:3034/api/:path*', // Forward the requests to the backend server
+          source: '/api/:path*',
+          destination: 'https://express-with-admin-37fcf5816bab.herokuapp.com/api/:path*',
         },
       ];
     },
